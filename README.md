@@ -1,5 +1,8 @@
 # Column Data Structure in C
 
+## Team members
+- **Rayan BOUMEDINE**
+- **Brian Marcel**
 
 ## GitHub Repository: 
 [![github](https://img.shields.io/badge/Project's_link-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Pandarock0/CDataframe)
@@ -26,3 +29,10 @@ Our project aims to implement a columnar data management system in C, providing 
 
 - The program dynamically allocates memory for the column data and reallocates as needed to accommodate more values.
 - Make sure to delete the column before exiting to avoid memory leaks.
+
+## Installation 
+Run the given command to install the project:
+
+```bash
+  git clone https://github.com/Pandarock0/CDataframe
+```
