@@ -1,107 +1,72 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "CDataFrame.h"
+#include <stdbool.h>
+#include "functions.h"
 
 
 int main() {
-    COLUMN *mycol = NULL;
-    COLUMN *current_col = NULL;
+    int BOOL = 1;
+    while (BOOL == 1) {
+        int choose_value;
+        printf("1. Create a name shop (column)\nChoose the option : ");
+        scanf("%d", &choose_value);
 
-    int choice;
-    int value, index;
-
-    do {
-        display_menu();
-        scanf("%d", &choice);
-
-        switch (choice) {
-            case 1:
-                if (mycol != NULL) {
-                    printf("Column already exists. Deleting previous column...\n");
-                    delete_column(&mycol);
-                }
-                printf("Enter column title: ");
-                char title[100];
-                scanf("%s", title);
-                mycol = create_column(title);
-                current_col = mycol;
-                break;
-            case 2:
-                if (current_col == NULL) {
-                    printf("No column created yet.\n");
-                    break;
-                }
-                printf("Enter value to insert: ");
-                scanf("%d", &value);
-                if (insert_value(current_col, value))
-                    printf("Value added successfully to the column\n");
-                else
-                    printf("Error adding value to the column\n");
-                break;
-            case 3:
-                if (current_col == NULL) {
-                    printf("No column created yet.\n");
-                    break;
-                }
-                print_col(current_col);
-                break;
-            case 4:
-                if (current_col == NULL) {
-                    printf("No column created yet.\n");
-                    break;
-                }
-                printf("Enter value to count occurrences: ");
-                scanf("%d", &value);
-                printf("Number of occurrences: %d\n", count_occurrences(current_col, value));
-                break;
-            case 5:
-                if (current_col == NULL) {
-                    printf("No column created yet.\n");
-                    break;
-                }
-                printf("Enter index to get value: ");
-                scanf("%d", &index);
-                printf("Value at index %d: %d\n", index, get_value(current_col, index));
-                break;
-            case 6:
-                if (current_col == NULL) {
-                    printf("No column created yet.\n");
-                    break;
-                }
-                printf("Enter value to count values greater than: ");
-                scanf("%d", &value);
-                printf("Number of values greater than %d: %d\n", value, retgreater(current_col, value));
-                break;
-            case 7:
-                if (current_col == NULL) {
-                    printf("No column created yet.\n");
-                    break;
-                }
-                printf("Enter value to count values less than: ");
-                scanf("%d", &value);
-                printf("Number of values less than %d: %d\n", value, retless(current_col, value));
-                break;
-            case 8:
-                if (current_col == NULL) {
-                    printf("No column created yet.\n");
-                    break;
-                }
-                printf("Enter value to count occurrences: ");
-                scanf("%d", &value);
-                printf("Number of values equal to %d: %d\n", value, count_values_equal_to(current_col, value));
-                break;
-            case 0:
-                printf("Exiting...\n");
-                break;
-            default:
-                printf("Invalid choice. Please try again.\n");
+        if (choose_value == 1) {
+            char name[50];
+            printf("Enter the name of your shop (column) : ");
+            scanf("%s", name);
+            COLUMN *myColumn = create_column(name);
+            // Add more code here if you want to do something with myColumn
         }
-    } while (choice != 0);
-
-    if (mycol != NULL) {
-        delete_column(&mycol);
+        BOOL = 0;
     }
+
+    /*
+    // Create a column
+    COLUMN *myColumn = create_column("Electronics");
+
+    // Create some articles
+    Article article1 = {strdup("Laptop"), 1000, 10, 0};
+    Article article2 = {strdup("Smartphone"), 600, 5, 10};
+    Article article3 = {strdup("Headphones"), 100, 15, 5};
+    Article article4 = {strdup("Monitor"), 300, 7, 0};
+
+    // Insert articles into the column
+    insert_article(myColumn, article1);
+    insert_article(myColumn, article2);
+    insert_article(myColumn, article3);
+    insert_article(myColumn, article4);
+
+    // Print all articles in the column
+    print_col(myColumn);
+
+    // Search for an article by name
+    search_by_name(myColumn, "Smartphone");
+
+    // Update an article
+    update_article(myColumn);
+
+    // Print all articles in the column again to see the update
+    print_col(myColumn);
+
+    // Print articles with price under a certain value
+    printf("Articles with price under 500:\n");
+    price_under_n(myColumn, 500);
+
+    // Print articles with reductions
+    printf("Articles with reductions:\n");
+    Reduc_catalog(myColumn);
+
+    // Delete an article by index
+    delete_article(myColumn, 2);
+
+    // Print all articles in the column again to see the deletion
+    print_col(myColumn);
+
+    // Clean up and free memory
+    delete_column(&myColumn);
+    */
 
     return 0;
 }
