@@ -62,6 +62,9 @@ To compile and run this project, you need a C compiler like Clion.
 
 # CDataframe, Supermarket Management System in C (Part 2)
 
+## Important !!
+The employee password for the inventory management is : EFREIPROJECT
+
 ## Overview
 This project demonstrates the management of a supermarket inventory using a C program. It includes the creation, manipulation, and analysis of shelves and their items. The project is composed of three main components:
 
