@@ -22,7 +22,7 @@ To compile and run this project, you need a C compiler like Clion.
 
 # Functionalities
 
-## Column.h
+## Column.c
 
 **COLUMN**: Structure representing a column with a title, data array, physical size, and logical size.
 
