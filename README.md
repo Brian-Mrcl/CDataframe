@@ -1,3 +1,6 @@
+## GitHub Repository: 
+[![github](https://img.shields.io/badge/Project's_link-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Pandarock0/CDataframe)
+
 # Dataframe Project in C (Part 1)
 
 ## Overview
@@ -118,6 +121,13 @@ To compile and run this project, you need a C compiler such as GCC.
 ### main.c
 
 **main()**: Calls various functions to demonstrate the functionalities of the supermarket management system, including creating shelves, adding articles, printing the inventory, deleting articles, and analyzing the inventory.
+
+## Installation 
+Run the given command to install the project:
+
+```bash
+  git clone https://github.com/Pandarock0/CDataframe
+```
 
 ## Authors
 
