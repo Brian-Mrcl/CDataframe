@@ -1,38 +1,65 @@
-# Column Data Structure in C
+# Dataframe Project in C (Part 1)
 
-## Team members
-- **Rayan BOUMEDINE**
-- **Brian Marcel**
+## Overview
 
-## GitHub Repository: 
-[![github](https://img.shields.io/badge/Project's_link-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Pandarock0/CDataframe)
+This project demonstrates basic operations on a dataframe structure in C, including creation, manipulation, and analysis of columns and their values. The project includes three main components:
 
-## Project Description:
+1. **Column.c**: File defining the structure and functions for managing individual columns.
+2. **Dataframe.c**: Implementation file providing functions to create, manipulate, and analyze dataframes.
+3. **main.c**: Main program file that tests the functionalities of the dataframe.
 
-Our project aims to implement a columnar data management system in C, providing functionalities to create, manipulate, and analyze tabular data efficiently. The core components of our project include:
-1. column.h: Contains the structure and function prototypes for managing a single column of data.
-2. cdataframe.h: Contains the structure and function prototypes for managing a collection of columns, forming a CDataframe.
-3. main.c: Provides an example scenario demonstrating the usage of the implemented functions.
+## Files
 
-## Features
+- **Column.c**: Defines the `COLUMN` structure and functions to create, insert values, delete, and perform other operations on columns.
+- **Dataframe.c**: Implements the `CDataframe` structure and provides functions to add columns, input values, print, delete values, and analyze the dataframe.
+- **main.c**: Contains the `main` function which tests the dataframe functionalities by calling the appropriate functions.
 
-- Creation of a column with a title
-- Insertion of values into the column
-- Printing the data stored in the column
-- Counting occurrences of a specific value in the column
-- Retrieving the value at a given index in the column
-- Counting the number of values greater than a given value in the column
-- Counting the number of values less than a given value in the column
-- Counting the number of values equal to a given value in the column
+## Getting Started
 
-## Note
+### Prerequisites
 
-- The program dynamically allocates memory for the column data and reallocates as needed to accommodate more values.
-- Make sure to delete the column before exiting to avoid memory leaks.
+To compile and run this project, you need a C compiler like Clion.
 
-## Installation 
-Run the given command to install the project:
+# Functionalities
 
-```bash
-  git clone https://github.com/Pandarock0/CDataframe
-```
+## Column.h
+
+**COLUMN**: Structure representing a column with a title, data array, physical size, and logical size.
+
+### Functions:
+
+- `create_column(char* title)`: Creates a new column.
+- `insert_value(COLUMN *col, int value)`: Inserts a value into the column.
+- `delete_column(COLUMN **col)`: Deletes a column.
+- `print_col(COLUMN *col)`: Prints the values of a column.
+- `count_occurrences(const COLUMN *col, int x)`: Counts occurrences of a value in the column.
+- `get_value(COLUMN *col, int x)`: Gets a value from the column.
+- `retgreater(COLUMN *col, int x)`: Returns the number of values greater than x in the column.
+- `retless(COLUMN *col, int x)`: Returns the number of values less than x in the column.
+- `count_values_equal_to(COLUMN *col, int x)`: Counts values equal to x in the column.
+
+## Dataframe.c
+
+**CDataframe**: Structure representing a dataframe containing multiple columns.
+
+### Functions:
+
+- `create_dataframe()`: Creates a new dataframe.
+- `add_column(CDataframe* df, COLUMN* col)`: Adds a column to the dataframe.
+- `delete_dataframe(CDataframe** df)`: Deletes the dataframe.
+- `input_values_for_column(CDataframe *df)`: Inputs values for a specific column.
+- `PrintCdataFrame(CDataframe *df)`: Prints the dataframe or specified range of columns.
+- `delete_values_from_column(CDataframe *df)`: Deletes values from a specific column.
+- `add_columns_to_dataframe(CDataframe* df)`: Adds new columns to the dataframe.
+- `analyze_cdataframe(CDataframe *df)`: Analyzes the dataframe for various metrics.
+
+## main.c
+
+**main()**: Calls `TestingFunctionsCdataFrame` to demonstrate the functionalities of the dataframe, including creating, adding columns, inserting values, printing, deleting values, and analyzing the dataframe.
+
+# CDataframe with shop inventory (Part 2)
+
+## Authors
+
+- Brian Marcel
+- Boumedine Rayan
